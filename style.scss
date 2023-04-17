@@ -1,0 +1,40 @@
+@import "vars";
+$color-other: #000;
+@mixin flex-center($color-other) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: $color-other;
+}
+
+%font-style {
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.container {
+    width: $widthContainer;
+    .title {
+        color: $colorTitle;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: $gapNav;
+    &__link {
+        text-decoration: none;
+        @extend %font-style;
+    }
+}
+
+.content {
+    @include flex-center(red);
+    gap: $gapNav;
+    &__item {
+        width: $widthContainer / 4;
+        height: 200px;
+        border: $borderDefault;
+    }
+}
